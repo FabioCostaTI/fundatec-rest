@@ -8,7 +8,12 @@ import java.util.List;
 @Repository
 public class CarroRepository {
     public List<String> listarCarros(){
-        List<String> carros= Arrays.asList("Mustang","Fusca","Fumbica","Celta","Camaro","Uno de firma");
+        List<String> carros= Arrays.asList("Mustang",
+                "Fusca",
+                "Fumbica",
+                "Celta",
+                "Camaro",
+                "Uno de firma");
         return carros;
     }
 
