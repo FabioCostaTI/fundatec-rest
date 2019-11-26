@@ -13,7 +13,7 @@ public class CarroService {
   this.carroRepository = carroRepository;
     }
 
-    public List<String> listarCarros(){
-          return carroRepository.listarCarros();
+    public List<String> listarCarros(String nome){
+          return carroRepository.listarCarros(nome);
 }
 }

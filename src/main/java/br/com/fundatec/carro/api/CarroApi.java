@@ -16,14 +16,15 @@ public class CarroApi {
 
     private final CarroService carroService;
 
-    public CarroApi(CarroService carroService){
-        this.carroService = carroService;
+    public CarroApi(CarroService carroService) { this.carroService = carroService;
     }
 
     @GetMapping("carros")
-    public ResponseEntity <List<String>> getCarros(@RequestParam (required = false, defaultValue = "") String nome){
-        List<String> carros = carroService.listarCarros();
-        System.out.println(nome);
+    public ResponseEntity<List<String>> getCarros(@RequestParam(required = false, defaultValue = "") String nome) {
+        List<String> carros = carroService.listarCarros(nome);
+        if (carros.size() == 0) {
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(carros);
+        }
         return ResponseEntity.ok(carros);
     }
 }
