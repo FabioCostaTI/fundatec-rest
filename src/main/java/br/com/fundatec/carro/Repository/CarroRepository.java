@@ -35,4 +35,9 @@ public class CarroRepository {
             return null;
     }
 
+    public Carro incluir(Carro carro) {
+        carro.setId(new Long(listaCarros.size() + 1));
+        listaCarros.add(carro);
+        return carro;
+    }
 }
